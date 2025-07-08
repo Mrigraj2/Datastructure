@@ -1,32 +1,44 @@
 package linkedList;
 
-public class LinkedList {
+class Node{
+    public int value;
+    public Node next;
 
+    public Node(int value){
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + value +
+                ", next=" + next +
+                '}';
+    }
+}
+
+public class LinkedList {
     private Node head;
     private Node tail;
     int length;
 
-    class Node{
-        int value;
-        Node next;
-
-        public Node(int value){
-            this.value=value;
-        }
-
-        @Override
-        public String toString() {
-            return "Node{" +
-                    "value=" + value +
-                    ", next=" + next +
-                    '}';
-        }
-    }
-
     public LinkedList(int value){
         Node newNode = new Node(value);
-        head = newNode;
-        tail = newNode;
+        this.head = newNode;
+        this.tail = newNode;
+        length=1;
+    }
+
+    public void addNode(int value){
+        Node node = new Node(value);
+        if (length==0){
+            head = node;
+            tail = node;
+        }else {
+            tail.next = node;
+            tail = node;
+        }
+        length++;
     }
 
     @Override
@@ -34,7 +46,16 @@ public class LinkedList {
         return "LinkedList{" +
                 "head=" + head +
                 ", tail=" + tail +
-                ", length=" + length +
                 '}';
     }
+
+    public void printList(){
+        Node temp = head;
+        while (temp!=null){
+            System.out.println(temp.value);
+            temp = temp.next;
+        }
+    }
+
+
 }
