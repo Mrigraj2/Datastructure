@@ -16,7 +16,7 @@ public class LinkedList{
 
     public void addNode(int value){
         Node newNode = new Node(value);
-        if (head == null) {
+            if (head == null) {
             head = newNode;
             tail = newNode;
         } else {
@@ -30,6 +30,18 @@ public class LinkedList{
         for (int i =1;i<=10;i++){
             addNode(value*i);
         }
+    }
+
+    public void preAddNode(int value){
+        Node node = new Node(value);
+        node.setNext(head);
+        head = node;
+    }
+
+    public void postAddNode(int value){
+        Node node = new Node(value);
+        tail.setNext(node);
+        tail = node;
     }
 
     public void printList() {
