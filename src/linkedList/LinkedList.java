@@ -4,6 +4,9 @@ public class LinkedList{
     Node head;
     Node tail;
 
+    public LinkedList(){
+    };
+
     public LinkedList(int value){
         Node newNode = new Node(value);
         head = newNode;
@@ -13,17 +16,28 @@ public class LinkedList{
 
     public void addNode(int value){
         Node newNode = new Node(value);
-        head.setNext(newNode);
-        tail = newNode;
-        tail.setNext(null);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.setNext(newNode);
+            tail = newNode;
+        }
     }
 
 
-    @Override
-    public String toString() {
-        return "LinkedList{" +
-                "head=" + head +
-                ", tail=" + tail +
-                '}';
+    public void pahade(int value){
+        for (int i =1;i<=10;i++){
+            addNode(value*i);
+        }
+    }
+
+    public void printList() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.getValue() + " -> ");
+            current = current.getNext();
+        }
+        System.out.println("null");
     }
 }
