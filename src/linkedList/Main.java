@@ -11,6 +11,7 @@ public class Main {
         list.printList();
 //        list.transferHeadToIndex(5);
 //        list.printList();
+        list.findMiddle(list.head);
     }
 
 }

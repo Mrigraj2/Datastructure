@@ -74,7 +74,6 @@ public class LinkedList{
             if (i<index){
                 temp = x.getNext();
                 x= temp;
-                length++;
                 System.out.println(x.getValue());
 
             }else {
@@ -95,7 +94,6 @@ public class LinkedList{
             current = current.getNext();
         }
         System.out.println("Total length: "+length);
-        System.out.println("null");
     }
 
     public void transferHeadToIndex(int index){
@@ -113,5 +111,21 @@ public class LinkedList{
             }
         }
         System.out.println("Final head: "+temp.getValue());
+    }
+
+
+    public void findMiddle(Node head){
+        Node temp;
+        int length=1;
+
+        do {
+            temp = head.getNext();
+            head = temp;
+            length++;
+        }while(head.getNext()!=null);
+
+        System.out.println("Length of linked list: "+length);
+
+
     }
 }
