@@ -66,11 +66,17 @@ public class LinkedList{
      * @param index at specified index
      */
     public void insertAtIndex(int value, int index){
-        Node temp = head;
+        System.out.println("Original length-->" +this.length);
+        Node x = head;
+        Node temp = x;
         Node currentNode = new Node(value);
         for (int i = 0;i<=length;i++){
-            if (index!=length){
-                temp = head.getNext();
+            if (i<index){
+                temp = x.getNext();
+                x= temp;
+                length++;
+                System.out.println(x.getValue());
+
             }else {
                 Node nextNode = temp.getNext();
                 temp.setNext(currentNode);
@@ -90,5 +96,22 @@ public class LinkedList{
         }
         System.out.println("Total length: "+length);
         System.out.println("null");
+    }
+
+    public void transferHeadToIndex(int index){
+        Node temp = head;
+        System.out.println("Current head: "+temp.getValue());
+        for (int i=1;i<=length;i++){
+
+            if (i<=index){
+                temp=head.getNext();
+                head = temp;
+                System.out.println(head.getValue());
+                length--;
+            }else {
+                break;
+            }
+        }
+        System.out.println("Final head: "+temp.getValue());
     }
 }

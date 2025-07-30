@@ -7,8 +7,10 @@ public class Main {
         list.pahade(5);
         list.preAddNode(34);
         list.postAddNode(55);
-        list.insertAtIndex(4,1);
+        list.insertAtIndex(74,5);
         list.printList();
+//        list.transferHeadToIndex(5);
+//        list.printList();
     }
 
 }
