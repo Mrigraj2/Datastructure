@@ -128,4 +128,24 @@ public class LinkedList{
 
 
     }
+
+    public void reverseLinkedList(){
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        tail = head;
+
+        while (current!=null){
+           next = current.getNext();
+           current.setNext(prev);
+           prev = current;
+//           System.out.print(prev.getValue()+" -> ");
+           current = next;
+//           System.out.print(current.getValue()+"->");
+
+        }
+        head = prev;
+
+    }
 }
