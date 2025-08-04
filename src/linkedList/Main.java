@@ -13,6 +13,8 @@ public class Main {
 //        list.printList();
 //        list.findMiddle(list.head);
         list.reverseLinkedList();
+        LeetcodeMethods lc = new LeetcodeMethods();
+        lc.findMiddleOfList(list);
         list.printList();
     }
 
