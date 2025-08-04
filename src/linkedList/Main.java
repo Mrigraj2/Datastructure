@@ -12,10 +12,10 @@ public class Main {
 //        list.transferHeadToIndex(5);
 //        list.printList();
 //        list.findMiddle(list.head);
-        list.reverseLinkedList();
+//        list.reverseLinkedList();
         LeetcodeMethods lc = new LeetcodeMethods();
         lc.findMiddleOfList(list);
-        list.printList();
+//        list.printList();
     }
 
 }

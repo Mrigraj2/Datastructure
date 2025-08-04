@@ -25,18 +25,41 @@ public class LeetcodeMethods {
 
         if(x==0) {
             int y = length/2;
-            for(int i =y;i<v.size();i++) {
-                v.add(y);
+            Node temp1;
+            Node next =list.head;
+            int count=0;
+            while (next!=null){
+                temp1 = next.getNext();
+                if (temp1 == null){
+                    break;
+                }
+                count++;
+                if (count==y){
+                    continue;
+                } else if (count>y) {
+                    v.add(next.getValue());
+                }
+                System.out.print( "Counting heads before insertion "+next.getValue()+" -> ");
+                next = temp1;
+
+
             }
-//			System.out.println(v);
 
         }else {
             int y = length/2;
-            for(int i =(y-1);i<v.size();i++) {
-                v.add(y);
+            Node temp1;
+            while(head!=null){
+                temp1 = head.getNext();
+                v.add(head.getValue());
+                head = temp1;
             }
-//			System.out.println(v);
         }
         System.out.println(v);
+        long lengthOfVector = v.stream().count();
+        if ((lengthOfVector%2)>0){
+            System.out.print("Middle elements: "+v.get(0)+", "+v.get(1));
+        } else if ((lengthOfVector%2)==0) {
+            System.out.print("Middle element: "+v.get(0));
+        }
     }
 }
