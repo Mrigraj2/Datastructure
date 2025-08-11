@@ -57,9 +57,18 @@ public class LeetcodeMethods {
         System.out.println(v);
         long lengthOfVector = v.stream().count();
         if ((lengthOfVector%2)>0){
-            System.out.print("Middle elements: "+v.get(0)+", "+v.get(1));
+            System.out.print("Middle element: "+v.get(1));
         } else if ((lengthOfVector%2)==0) {
             System.out.print("Middle element: "+v.get(0));
         }
+    }
+
+    public int getDecimalValue(Node head) {
+        int result = 0;
+        while(head!=null){
+            result = result*2 + head.getValue();
+            head = head.getNext();
+        }
+        return result;
     }
 }
