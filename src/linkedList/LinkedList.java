@@ -140,10 +140,7 @@ public class LinkedList{
            next = current.getNext();
            current.setNext(prev);
            prev = current;
-//           System.out.print(prev.getValue()+" -> ");
            current = next;
-//           System.out.print(current.getValue()+"->");
-
         }
         head = prev;
 
