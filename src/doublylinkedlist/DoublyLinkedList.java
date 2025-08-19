@@ -22,10 +22,10 @@ public class DoublyLinkedList {
     public void printLinkedList(){
         Node temp = head;
 
-        while(temp!=null){
-            System.out.println(temp);
+        do {
+            System.out.print(temp.value +" -->");
             temp = temp.next;
-        }
+        }while (temp!=null);
     }
 
 }
