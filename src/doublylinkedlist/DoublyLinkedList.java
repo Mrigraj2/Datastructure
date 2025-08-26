@@ -11,13 +11,15 @@ public class DoublyLinkedList {
         tail = newNode;
     }
 
-    public void addNode(int value){
-        Node newNode = new Node(value);
-        tail.next = newNode;
-        tail = newNode;
-        tail.next = null;
-
-    }
+//    public void addNode(int value){
+//        Node temp = tail;
+//        Node newNode = new Node(value);
+//        tail.next = newNode;
+//        tail = newNode;
+//        tail.next = null;
+//        tail.prev = temp;
+//
+//    }
 
     public void printLinkedList(){
         Node temp = head;
