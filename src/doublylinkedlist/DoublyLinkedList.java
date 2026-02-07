@@ -18,7 +18,6 @@ public class DoublyLinkedList {
         tail = newNode;
         tail.next = null;
         tail.prev = temp;
-
     }
 
     public void printLinkedList(){
