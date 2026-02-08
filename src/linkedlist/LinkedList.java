@@ -145,4 +145,9 @@ public class LinkedList{
         head = prev;
 
     }
+
+    public int getLength()
+    {
+        return length;
+    }
 }
